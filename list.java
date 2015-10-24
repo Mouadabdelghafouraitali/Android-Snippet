@@ -116,7 +116,13 @@ if(bundle != null){
 }
 
 
-// read text / html from internet
+
+
+
+
+
+
+// // **********************************************  read text / html from internet
 private class GetXML extends AsyncTask <String, Void, String>{
 	@Override
 	protected String doInBackground(String ...urls){
@@ -137,8 +143,6 @@ private class GetXML extends AsyncTask <String, Void, String>{
 		Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
 	}
 }
-
-
 
 
 
@@ -169,13 +173,9 @@ public void showAlertDialog(){
 
 
 
-
-
-
 // ********************************************** listview and adapter
 ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, YourArrayHere); 
 listView.setAdapter(adapter);
-
 
 
 
@@ -191,8 +191,6 @@ listView.setOnItemClickListener(new OnItemClickListener() {
 	Toast.makeText(getApplicationContext(), YourArrayHere[position], Toast.LENGTH_SHORT).show(); 
 	} 
 });
-
-
 
 
 
@@ -232,10 +230,6 @@ public class ListAdapter extends ArrayAdapter<YourArray> {
     }
 }
 ListAdapter customAdapter = new ListAdapter(this, R.layout.YourCustomXmlLayout, YourArray);
-
-
-
-
 
 
 
