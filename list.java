@@ -4,15 +4,9 @@ img.setImageResource(id)
 
 
 
-
-
 //********************************************** Set background
 screen = (RelativeLayout) findViewById(screen id)
 screen.setBackgroundResource(drawable id)
-
-
-
-
 
 
 
@@ -20,9 +14,6 @@ screen.setBackgroundResource(drawable id)
 URL url = new URL(link text);
 Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
 img.setImageBitmap(bmp);
-
-
-
 
 
 
@@ -39,8 +30,6 @@ img.setOnTouchListener(new View.OnTouchListener(){
 		return false;
 	}
 });
-
-
 
 
 
@@ -69,9 +58,6 @@ btnTimer.startAnimation(animation);
 
 
 
-
-
-
 // **********************************************  Timer
 new CountDownTimer(5000, 100){
 	public void onTick(long millisUntilFinished){
@@ -86,19 +72,9 @@ new CountDownTimer(5000, 100){
 
 
 
-
-
-
-
-
 // ********************************************** open new activity via intent
 Intent intent = new Intent(context, second.class);
 startActivity(intent);
-
-
-
-
-
 
 
 
@@ -114,8 +90,6 @@ Bundle bundle = new getIntent().getExtras();
 if(bundle != null){
 	stringValueHere = bundle.getString("name");
 }
-
-
 
 
 
@@ -148,10 +122,6 @@ private class GetXML extends AsyncTask <String, Void, String>{
 
 
 
-
-
-
-
 // ********************************************** show alert dialog
 public void showAlertDialog(){ 
 	AlertDialog.Builder builder = new Builder(context); 
@@ -170,14 +140,9 @@ public void showAlertDialog(){
 
 
 
-
-
-
 // ********************************************** listview and adapter
 ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, YourArrayHere); 
 listView.setAdapter(adapter);
-
-
 
 
 
@@ -191,10 +156,6 @@ listView.setOnItemClickListener(new OnItemClickListener() {
 	Toast.makeText(getApplicationContext(), YourArrayHere[position], Toast.LENGTH_SHORT).show(); 
 	} 
 });
-
-
-
-
 
 
 
@@ -236,9 +197,6 @@ ListAdapter customAdapter = new ListAdapter(this, R.layout.YourCustomXmlLayout, 
 
 
 
-
-
-
 // ********************************************** Toast basic
 Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
 //
@@ -256,23 +214,9 @@ t.show();
 
 
 
-
-
-
-
-
 // **********************************************  parse value
 Integer.parseInt("1987")
 String.valueOf(10)
-
-
-
-
-
-
-
-
-
 
 
 
@@ -310,13 +254,6 @@ public void PlayMp3FromInternet(String url){
 
 
 
-
-
-
-
-
-
-
 // ********************************************** checkbox
 chk = (CheckBox) findViewById(id);
 chk.setOnClickListener(new View.OnClickListener(){
@@ -330,14 +267,6 @@ chk.setOnClickListener(new View.OnClickListener(){
 		}
 	}
 });
-
-
-
-
-
-
-
-
 
 
 
@@ -362,22 +291,12 @@ YourStringValue.append("\n");
 
 
 
-
-
-
-
-
-
 // ********************************************** check if 2 view is touch together
 public boolean CheckCollision(View v1, View v2){
 	Rect r1 = new Rect(v1.getLeft(), v1.getTop(), v1.getRight(), v1.getBottom());
 	Rect r2 = new Rect(v2.getLeft(), v2.getTop(), v2.getRight(), v2.getBottom());
 	return r1.intersect(r2);
 }
-
-
-
-
 
 
 
@@ -394,19 +313,9 @@ int ori = display.getOrientation();
 
 
 
-
-
-
-
-
 // **********************************************Webview: Using url from internet or local - remember Internet permission in android manifest
 wb = (WebView) findViewById(YourWebiewId);
 wv.loadUrl("your url here");
-
-
-
-
-
 
 
 
@@ -421,7 +330,6 @@ int n = sp.getInt("Count", 0);
 SharedPreferances.Editor editor = sp.edit();
 editor.putInt("Count", n);
 editor.commit();
-
 
 
 
@@ -481,11 +389,6 @@ Database db = new Database(context);
 
 
 
-
-
-
-
-
 // ********************************************** Async Task
 @Override{
 	protected void onCreate(Bundle savedInstancedState){
@@ -514,13 +417,6 @@ class YourAsync extends AsyncTask <String, Integer, String> {
 
 	}
 }
-
-
-
-
-
-
-
 
 
 
@@ -630,14 +526,6 @@ runOnUiThread(new Runnable(){
 
 
 
-
-
-
-
-
-
-
-
 // ********************************************** open your camera
 Intent camaraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
 startActivityForResult(camaraIntent, CAMERA_REQUEST);
@@ -649,10 +537,6 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data){
 		img.setImageBitmap(photo);
 	}
 }
-
-
-
-
 
 
 
@@ -676,12 +560,6 @@ protected void onCreate(Bundle savedInstanceState) {
         }
     });
 }
-
-
-
-
-
-
 
 
 
@@ -721,10 +599,6 @@ private String makePostRequest() {
 
     return result;
 }
-
-
-
-
 
 
 
@@ -771,9 +645,6 @@ private static String readFromURL(String theUrl)
 
 
 
-
-
-
 // ********************************************** imageView to byte array
 public byte[] ImageView_To_Byte(){
         //Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.chomuc);
@@ -797,10 +668,6 @@ imgv.setImageBitmap(bitmap);
 
 
 
-
-
-
-
 // ********************************************** config parse connect
  // Add class MyApplication
 public class MyApplication extends Application {
@@ -812,12 +679,6 @@ public class MyApplication extends Application {
 }
 // in android Manifest
 android:name="MyApplication"
-
-
-
-
-
-
 
 
 
@@ -885,11 +746,6 @@ class WifiReceiver extends BroadcastReceiver {
 
 
 
-
-
-
-
-
 // ********************************************** PROMPT USER INPUT WITH AN ALERTDIALOG
 AlertDialog.Builder alert = new AlertDialog.Builder(this);
 alert.setTitle("Title");
@@ -923,9 +779,6 @@ alert.show();
 
 
 
-
-
-
 // ********************************************** CHECK IF INTERNET IS AVAILABLE
 private boolean haveInternet(){
 	NetworkInfo info = ((ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
@@ -938,10 +791,6 @@ private boolean haveInternet(){
 	}
 	return true;
 }
-
-
-
-
 
 
 
@@ -978,20 +827,12 @@ return true;
 
 
 
-
-
-
-
 // ********************************************** DISABLE (INITIAL) SCREEN LOCK
 KeyguardManager keyguardManager = (KeyguardManager)getSystemService(Activity.KEYGUARD_SERVICE);
 KeyguardLock lock = keyguardManager.newKeyguardLock(KEYGUARD_SERVICE);
 lock.disableKeyguard();
 // in android manifest:
 <uses-permission android:name="android.permission.DISABLE_KEYGUARD"></uses-permission>
-
-
-
-
 
 
 
@@ -1008,11 +849,6 @@ private static long back_pressed;
 		else Toast.makeText(getBaseContext(), "Press once again to exit!", Toast.LENGTH_SHORT).show();
 	back_pressed = System.currentTimeMillis();
 }
-
-
-
-
-
 
 
 
@@ -1050,3 +886,125 @@ canvas.drawBitmap(bitmap.get(i), 0f, top, null);
 }
 return temp;
 }
+
+
+
+
+// Passsing an Integer array via Intent
+Intent i = new Intent(A.this, B.class);
+i.putExtra("numbers", array);
+startActivity(i);
+
+Bundle extras = getIntent().getExtras();
+int[] arrayB = extras.getIntArray("numbers");
+
+
+
+
+
+
+
+// Passsing an OBJECT via Intent
+ClassName details = new ClassName();
+Intent i = new Intent(context, EditActivity.class);
+i.putExtra("Editing", details);
+startActivity(i);
+
+
+//receive
+ClassName model = (ClassName) getIntent().getSerializableExtra("Editing");
+
+And 
+
+Class ClassName implements Serializable {
+} 
+
+
+
+
+// Edittext with round-Corner
+<?xml version="1.0" encoding="utf-8"?>
+<!--  res/drawable/rounded_edittext.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+android:shape="rectangle" android:padding="10dp">
+ <solid android:color="#FFFFFF"/>
+    <corners
+     android:bottomRightRadius="15dp"
+     android:bottomLeftRadius="15dp"
+  android:topLeftRadius="15dp"
+  android:topRightRadius="15dp"/>
+</shape>
+
+
+
+
+
+
+
+
+// Edittext with round-Corner
+<?xml version="1.0" encoding="utf-8"?>
+<!--  res/drawable/edittext_rounded_corners.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item android:state_pressed="true" android:state_focused="true">
+    <shape>
+        <solid android:color="#FF8000"/>
+        <stroke
+            android:width="2.3dp"
+            android:color="#FF8000" />
+         <corners
+            android:radius="15dp" />
+    </shape>
+</item>
+
+<item android:state_pressed="true" android:state_focused="false">
+    <shape>
+        <solid android:color="#FF8000"/>
+        <stroke
+            android:width="2.3dp"
+            android:color="#FF8000" />      
+        <corners
+            android:radius="15dp" />       
+    </shape>
+</item>
+
+<item android:state_pressed="false" android:state_focused="true">
+    <shape>
+        <solid android:color="#FFFFFF"/>
+        <stroke
+            android:width="2.3dp"
+            android:color="#FF8000" />  
+        <corners
+            android:radius="15dp" />                          
+    </shape>
+</item>
+
+<item android:state_pressed="false" android:state_focused="false">
+    <shape>
+        <gradient 
+            android:startColor="#F2F2F2"
+            android:centerColor="#FFFFFF"
+            android:endColor="#FFFFFF"
+            android:angle="270"
+        />
+        <stroke
+            android:width="0.7dp"                
+            android:color="#BDBDBD" /> 
+        <corners
+            android:radius="15dp" />            
+    </shape>
+</item>
+
+<item android:state_enabled="true">
+    <shape>
+        <padding 
+                android:left="4dp"
+                android:top="4dp"
+                android:right="4dp"
+                android:bottom="4dp"
+            />
+    </shape>
+</item>
+
+</selector>
