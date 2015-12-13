@@ -1,4 +1,9 @@
-// Method 1:
+// method 1:
+URL newurl = new URL(photo_url_str); 
+mIcon_val = BitmapFactory.decodeStream(newurl.openConnection() .getInputStream());
+profile_photo.setImageBitmap(mIcon_val);
+
+// Method 2:
 public Bitmap getBitmapFromURL(String src) {
         try {
             java.net.URL url = new java.net.URL(src);
@@ -15,7 +20,7 @@ public Bitmap getBitmapFromURL(String src) {
         }
     }
 
-// method 2:
+// method 3:
 private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     ImageView bmImage;
 
@@ -41,7 +46,7 @@ private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     }
 }
 
-// Method 3:
+// Method 4:
 public static Bitmap loadBitmap(String url) {
     Bitmap bitmap = null;
     InputStream in = null;
