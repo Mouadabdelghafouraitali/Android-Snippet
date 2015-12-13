@@ -72,28 +72,6 @@ new CountDownTimer(5000, 100){
 
 
 
-// ********************************************** open new activity via intent
-Intent intent = new Intent(context, second.class);
-startActivity(intent);
-
-
-
-
-
-// ********************************************** passing data between two intent
-//send
-Intent intent = new Intent(context, second.class);
-intent.putExtra("name", stringValueHere);
-startActivity(intent);
-//get
-Bundle bundle = new getIntent().getExtras();
-if(bundle != null){
-	stringValueHere = bundle.getString("name");
-}
-
-
-
-
 
 
 // // **********************************************  read text / html from internet
@@ -117,6 +95,7 @@ private class GetXML extends AsyncTask <String, Void, String>{
 		Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
 	}
 }
+
 
 
 
@@ -525,24 +504,6 @@ runOnUiThread(new Runnable(){
 
 
 
-
-// ********************************************** open your camera
-Intent camaraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-startActivityForResult(camaraIntent, CAMERA_REQUEST);
-// return your Bitmap
-protected void onActivityResult(int requestCode, int resultCode, Intent data){
-	if(requestCode == CAMERA_REQUEST && resultCode == RESULT_OK){
-		Bitmap photo = (Bitmap) data.getExtras().get("data");
-		img = (ImageView) findViewById(yourImageId);
-		img.setImageBitmap(photo);
-	}
-}
-
-
-
-
-
-
 // ********************************************** TEXT TO SPEED
 TextToSpeech t1;
 @Override
@@ -890,121 +851,4 @@ return temp;
 
 
 
-// Passsing an Integer array via Intent
-Intent i = new Intent(A.this, B.class);
-i.putExtra("numbers", array);
-startActivity(i);
 
-Bundle extras = getIntent().getExtras();
-int[] arrayB = extras.getIntArray("numbers");
-
-
-
-
-
-
-
-// Passsing an OBJECT via Intent
-ClassName details = new ClassName();
-Intent i = new Intent(context, EditActivity.class);
-i.putExtra("Editing", details);
-startActivity(i);
-
-
-//receive
-ClassName model = (ClassName) getIntent().getSerializableExtra("Editing");
-
-And 
-
-Class ClassName implements Serializable {
-} 
-
-
-
-
-// Edittext with round-Corner
-<?xml version="1.0" encoding="utf-8"?>
-<!--  res/drawable/rounded_edittext.xml -->
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-android:shape="rectangle" android:padding="10dp">
- <solid android:color="#FFFFFF"/>
-    <corners
-     android:bottomRightRadius="15dp"
-     android:bottomLeftRadius="15dp"
-  android:topLeftRadius="15dp"
-  android:topRightRadius="15dp"/>
-</shape>
-
-
-
-
-
-
-
-
-// Edittext with round-Corner
-<?xml version="1.0" encoding="utf-8"?>
-<!--  res/drawable/edittext_rounded_corners.xml -->
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-<item android:state_pressed="true" android:state_focused="true">
-    <shape>
-        <solid android:color="#FF8000"/>
-        <stroke
-            android:width="2.3dp"
-            android:color="#FF8000" />
-         <corners
-            android:radius="15dp" />
-    </shape>
-</item>
-
-<item android:state_pressed="true" android:state_focused="false">
-    <shape>
-        <solid android:color="#FF8000"/>
-        <stroke
-            android:width="2.3dp"
-            android:color="#FF8000" />      
-        <corners
-            android:radius="15dp" />       
-    </shape>
-</item>
-
-<item android:state_pressed="false" android:state_focused="true">
-    <shape>
-        <solid android:color="#FFFFFF"/>
-        <stroke
-            android:width="2.3dp"
-            android:color="#FF8000" />  
-        <corners
-            android:radius="15dp" />                          
-    </shape>
-</item>
-
-<item android:state_pressed="false" android:state_focused="false">
-    <shape>
-        <gradient 
-            android:startColor="#F2F2F2"
-            android:centerColor="#FFFFFF"
-            android:endColor="#FFFFFF"
-            android:angle="270"
-        />
-        <stroke
-            android:width="0.7dp"                
-            android:color="#BDBDBD" /> 
-        <corners
-            android:radius="15dp" />            
-    </shape>
-</item>
-
-<item android:state_enabled="true">
-    <shape>
-        <padding 
-                android:left="4dp"
-                android:top="4dp"
-                android:right="4dp"
-                android:bottom="4dp"
-            />
-    </shape>
-</item>
-
-</selector>
