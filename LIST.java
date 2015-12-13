@@ -1,15 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
 // ********************************************** Touch to get x,y position on the screen
 img = (ImageView) findViewById(image id);
 img.setOnTouchListener(new View.OnTouchListener(){
@@ -111,54 +101,6 @@ listView.setOnItemClickListener(new OnItemClickListener() {
 
 
 
-// ********************************************** Custom adapter
-public class ListAdapter extends ArrayAdapter<YourArray> {
-
-    public ListAdapter(Context context, int textViewResourceId) {
-        super(context, textViewResourceId);
-    }
-
-    public ListAdapter(Context context, int resource, List<YourArray> items) {
-        super(context, resource, items);
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-
-        View v = convertView;
-        if (v == null) {
-            LayoutInflater vi;
-            vi = LayoutInflater.from(getContext());
-            v = vi.inflate(R.layout.YourCustomXmlLayout, null);
-        }
-
-        YourArray p = getItem(position);
-
-        if (p != null) {
-            TextView tv = (TextView) v.findViewById(R.id.YourTextviewId);
-        }
-        return v;
-    }
-}
-ListAdapter customAdapter = new ListAdapter(this, R.layout.YourCustomXmlLayout, YourArray);
-
-
-
-
-
-
-// ********************************************** Toast basic
-Toast.makeText(context, result, Toast.LENGTH_SHORT).show();
-//
-Toast toast = Toast.makeText(MainActivity.this, "Hello World", Toast.LENGTH_SHORT);
-toast.setGravity(Gravity.TOP, 0, 0); 
-toast.show();
-// add view to Toast
-LayoutInflater inflater = getLayoutInflater();
-View layout = inflater.inflate(R.layout.YourLayout, (ViewGroup)findViewById(R.id.YourLayoutId));
-Toast t = new Toast(MainActivity.this);
-t.setView(layout);
-t.show(); 
 
 
 
