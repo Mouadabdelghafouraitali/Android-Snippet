@@ -1,9 +1,12 @@
-# Android-FuncLib
+# Android-Code example
 
 <br>
-Hello guys :)
-<br>
+Hello :)
+<br> <br>
 contact information: <br>
 Name: Huy Ng. M <br>
-Email: abc@davidng.xyz <br>
-Location: Ho Chi Minh City, Vietnam <br>
+Location: Ho Chi Minh City, Vietnam <br> <br>
+Email: abc@davidng.xyz or contact@davidng.xyz <br>
+Blog: http://davidng94.wordpress.com <br>
+Facebook: https://facebook.com/david15894 <br>
+Community: http://daynhauhoc.com
