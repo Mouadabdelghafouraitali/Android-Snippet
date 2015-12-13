@@ -1,3 +1,70 @@
+// ********************************************** show alert dialog
+public void showAlertDialog(){ 
+    AlertDialog.Builder builder = new Builder(context); 
+    builder.setTitle("title"); 
+    builder.setMessage("message"); 
+    builder.setPositiveButton("OK", new OnClickListener() { 
+        @Override 
+        public void onClick(DialogInterface dialog, int which) { 
+        // TODO Auto-generated method stub 
+    } 
+    }); 
+    builder.create().show();
+}
+
+
+
+
+
+
+
+
+
+// ********************************************** listview and adapter
+ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, YourArrayHere); 
+listView.setAdapter(adapter);
+
+
+
+
+
+
+
+
+
+// ********************************************** PROMPT USER INPUT WITH AN ALERTDIALOG
+AlertDialog.Builder alert = new AlertDialog.Builder(this);
+alert.setTitle("Title");
+alert.setMessage("Message");
+ 
+// Set an EditText view to get user input
+final EditText input = new EditText(this);
+alert.setView(input);
+ 
+alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+public void onClick(DialogInterface dialog, int whichButton) {
+String value = input.getText();
+// Do something with value!
+}
+});
+ 
+alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+public void onClick(DialogInterface dialog, int whichButton) {
+// Canceled.
+}
+});
+ 
+alert.show();
+
+
+
+
+
+
+
+
+
+
 // ********************************************** Custom adapter
 public class ListAdapter extends ArrayAdapter<YourArray> {
 
