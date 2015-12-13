@@ -1,18 +1,93 @@
-package com.phonegap;
+// STEP 1: add permission: RECORD_AUDIO, WRITE_EXTERNAL_STORAGE.
+/* STEP 2: Create some obj
+private MediaRecorder myRecorder;
+private MediaPlayer myPlayer;
+private String outputFile = null;
+----
+outputFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/khoaphamvn.3gpp";
+myRecorder = new MediaRecorder();
+myRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+myRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+myRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
+myRecorder.setOutputFile(outputFile);
+*/ 
 
-import java.io.File;
-import java.io.IOException;
+// STEP 3:
+// 3.1: start recording:
+public void start(View view){
+    try {
+        myRecorder.prepare();
+        myRecorder.start();
+    } catch (IllegalStateException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    Toast.makeText(getApplicationContext(), "Start recording...",
+            Toast.LENGTH_SHORT).show();
+}
 
-import android.content.Context;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnErrorListener;
-import android.media.MediaRecorder;
-import android.media.MediaPlayer.OnBufferingUpdateListener;
-import android.media.MediaPlayer.OnCompletionListener;
-import android.media.MediaPlayer.OnPreparedListener;
-import android.util.Log;
+// 3.2: stop recording:
+public void stop(View view){
+    try {
+        myRecorder.stop();
+        myRecorder.release();
+        myRecorder  = null;
 
+        Toast.makeText(getApplicationContext(), "Stop recording...",
+                Toast.LENGTH_SHORT).show();
+    } catch (IllegalStateException e) {
+        e.printStackTrace();
+    } catch (RuntimeException e) {
+        e.printStackTrace();
+    }
+}
+
+// 3.3: play your new audio
+public void play(View view) {
+    try{
+        myPlayer = new MediaPlayer();
+        myPlayer.setDataSource(outputFile);
+        myPlayer.prepare();
+        myPlayer.start();
+
+        Toast.makeText(getApplicationContext(), "Start play the recording...",Toast.LENGTH_SHORT).show();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+// 3.4: stop playing your new audio:
+public void stopPlay(View view) {
+    try {
+        if (myPlayer != null) {
+            myPlayer.stop();
+            myPlayer.release();
+            myPlayer = null;
+
+            Toast.makeText(getApplicationContext(), "Stop playing the recording...", Toast.LENGTH_SHORT).show();
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////      VIEW MORE EXAMPLE     ////////////////////////////////////////////////////
 public class AudioHandler implements OnCompletionListener, OnPreparedListener, OnErrorListener {
 	private MediaRecorder recorder;
 	private boolean isRecording = false;
