@@ -13,6 +13,16 @@ screen.setBackgroundResource(drawable id)
 
 
 
+//********************************************** Set image by path
+String path = Environment.getExternalStorageDirectory()+ "/Images/test.jpg";
+
+File imgFile = new File(path);
+if(imgFile.exists())
+{
+   Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+   ImageView imageView=(ImageView)findViewById(R.id.imageView);
+  imageView.setImageBitmap(myBitmap);
+}
 
 
 
